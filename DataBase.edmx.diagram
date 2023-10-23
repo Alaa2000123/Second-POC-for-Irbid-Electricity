@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="7fbe2b4b10d14edab8d1b1648bdce605" Name="Diagram1">
+        <EntityTypeShape EntityType="LeaveDemoModel.ActionHistory" Width="1.5" PointX="3" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="LeaveDemoModel.Action" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LeaveDemoModel.Emnployee" Width="1.5" PointX="6" PointY="4.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="LeaveDemoModel.GeneralRequest" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LeaveDemoModel.LeaveType" Width="1.5" PointX="3.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="LeaveDemoModel.RemarManagement" Width="1.5" PointX="5.75" PointY="1.75" IsExpanded="true" />
+        <AssociationConnector Association="LeaveDemoModel.FK__ActionHis__Reque__3B75D760" ManuallyRouted="false" />
+        <AssociationConnector Association="LeaveDemoModel.FK__ActionHis__UserA__3A81B327" ManuallyRouted="false" />
+        <AssociationConnector Association="LeaveDemoModel.FK__Emnployee__Reque__3D5E1FD2" ManuallyRouted="false" />
+        <AssociationConnector Association="LeaveDemoModel.fk_emnployee_leavetype" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

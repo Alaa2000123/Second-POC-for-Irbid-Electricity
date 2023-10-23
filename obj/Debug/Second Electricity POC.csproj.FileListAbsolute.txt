@@ -1,0 +1,20 @@
+D:\Second Electricity POC\Second Electricity POC\bin\Debug\Second Electricity POC.exe.config
+D:\Second Electricity POC\Second Electricity POC\bin\Debug\Second Electricity POC.exe
+D:\Second Electricity POC\Second Electricity POC\bin\Debug\Second Electricity POC.pdb
+D:\Second Electricity POC\Second Electricity POC\obj\Debug\Second Electricity POC.csproj.AssemblyReference.cache
+D:\Second Electricity POC\Second Electricity POC\obj\Debug\Second Electricity POC.csproj.SuggestedBindingRedirects.cache
+D:\Second Electricity POC\Second Electricity POC\obj\Debug\Second_Electricity_POC.Form1.resources
+D:\Second Electricity POC\Second Electricity POC\obj\Debug\Second_Electricity_POC.Properties.Resources.resources
+D:\Second Electricity POC\Second Electricity POC\obj\Debug\Second Electricity POC.csproj.GenerateResource.cache
+D:\Second Electricity POC\Second Electricity POC\obj\Debug\Second Electricity POC.csproj.CoreCompileInputs.cache
+D:\Second Electricity POC\Second Electricity POC\obj\Debug\Second Electricity POC.exe
+D:\Second Electricity POC\Second Electricity POC\obj\Debug\Second Electricity POC.pdb
+D:\Second Electricity POC\Second Electricity POC\obj\Debug\Second_Electricity_POC.Form2.resources
+D:\Second Electricity POC\Second Electricity POC\obj\Debug\Second_Electricity_POC.Form3.resources
+D:\Second Electricity POC\Second Electricity POC\bin\Debug\EntityFramework.dll
+D:\Second Electricity POC\Second Electricity POC\bin\Debug\EntityFramework.SqlServer.dll
+D:\Second Electricity POC\Second Electricity POC\bin\Debug\EntityFramework.xml
+D:\Second Electricity POC\Second Electricity POC\bin\Debug\EntityFramework.SqlServer.xml
+D:\Second Electricity POC\Second Electricity POC\obj\Debug\Second_Electricity_POC.Form4.resources
+D:\Second Electricity POC\Second Electricity POC\obj\Debug\Second Electricity POC.csproj.CopyComplete
+D:\Second Electricity POC\Second Electricity POC\obj\Debug\Second_Electricity_POC.Form5.resources

@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:tns="http://tempuri2.org/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://tempuri2.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri2.org/">
+      <s:element name="TaskActionsList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="serialNumber" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TaskActionsListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TaskActionsListResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="StartProcess">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="TableID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="GeneralRequesID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="ProcessName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="StartProcessResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="StartProcessResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ActionWorklistItem">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="serialNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="action" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userNameWithPrefix" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ActionWorklistItemResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ActionWorklistItemResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEmployeeTaskList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userNameWithPrefix" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="searchPattern" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="employeeName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="employeeNameEn" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="departmentName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="departmentNameEn" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEmployeeTaskListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetEmployeeTaskListResult" type="tns:ArrayOfK2TaskItem" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfK2TaskItem">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="K2TaskItem" nillable="true" type="tns:K2TaskItem" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="K2TaskItem">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Actions" type="tns:ArrayOfString" />
+          <s:element minOccurs="0" maxOccurs="1" name="ID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="serialNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="status" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Folio" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ProcessInstanceId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TaskLink" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TaskStatus" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TaskOwner" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="InternalEmployeeNameWithPrefix" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EmployeeName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EmployeeNameEn" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DepartmentName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DepartmentNameEn" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="InternalServiceName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ServiceName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ServiceNameEn" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="RequestDate" type="s:dateTime" />
+        </s:sequence>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="TaskActionsListSoapIn">
+    <wsdl:part name="parameters" element="tns:TaskActionsList" />
+  </wsdl:message>
+  <wsdl:message name="TaskActionsListSoapOut">
+    <wsdl:part name="parameters" element="tns:TaskActionsListResponse" />
+  </wsdl:message>
+  <wsdl:message name="StartProcessSoapIn">
+    <wsdl:part name="parameters" element="tns:StartProcess" />
+  </wsdl:message>
+  <wsdl:message name="StartProcessSoapOut">
+    <wsdl:part name="parameters" element="tns:StartProcessResponse" />
+  </wsdl:message>
+  <wsdl:message name="ActionWorklistItemSoapIn">
+    <wsdl:part name="parameters" element="tns:ActionWorklistItem" />
+  </wsdl:message>
+  <wsdl:message name="ActionWorklistItemSoapOut">
+    <wsdl:part name="parameters" element="tns:ActionWorklistItemResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetEmployeeTaskListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetEmployeeTaskList" />
+  </wsdl:message>
+  <wsdl:message name="GetEmployeeTaskListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetEmployeeTaskListResponse" />
+  </wsdl:message>
+  <wsdl:portType name="TaskActionSoap">
+    <wsdl:operation name="TaskActionsList">
+      <wsdl:input message="tns:TaskActionsListSoapIn" />
+      <wsdl:output message="tns:TaskActionsListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="StartProcess">
+      <wsdl:input message="tns:StartProcessSoapIn" />
+      <wsdl:output message="tns:StartProcessSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ActionWorklistItem">
+      <wsdl:input message="tns:ActionWorklistItemSoapIn" />
+      <wsdl:output message="tns:ActionWorklistItemSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEmployeeTaskList">
+      <wsdl:input message="tns:GetEmployeeTaskListSoapIn" />
+      <wsdl:output message="tns:GetEmployeeTaskListSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="TaskActionSoap" type="tns:TaskActionSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="TaskActionsList">
+      <soap:operation soapAction="http://tempuri2.org/TaskActionsList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StartProcess">
+      <soap:operation soapAction="http://tempuri2.org/StartProcess" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActionWorklistItem">
+      <soap:operation soapAction="http://tempuri2.org/ActionWorklistItem" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEmployeeTaskList">
+      <soap:operation soapAction="http://tempuri2.org/GetEmployeeTaskList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="TaskActionSoap12" type="tns:TaskActionSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="TaskActionsList">
+      <soap12:operation soapAction="http://tempuri2.org/TaskActionsList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StartProcess">
+      <soap12:operation soapAction="http://tempuri2.org/StartProcess" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActionWorklistItem">
+      <soap12:operation soapAction="http://tempuri2.org/ActionWorklistItem" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEmployeeTaskList">
+      <soap12:operation soapAction="http://tempuri2.org/GetEmployeeTaskList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="TaskAction">
+    <wsdl:port name="TaskActionSoap" binding="tns:TaskActionSoap">
+      <soap:address location="https://demo.adaaapps.com:5001/taskactions.asmx" />
+    </wsdl:port>
+    <wsdl:port name="TaskActionSoap12" binding="tns:TaskActionSoap12">
+      <soap12:address location="https://demo.adaaapps.com:5001/taskactions.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

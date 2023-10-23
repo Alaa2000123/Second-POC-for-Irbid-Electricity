@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="LeaveDemoModelStoreContainer" CdmEntityContainer="LeaveDemoEntities">
+    <EntitySetMapping Name="ActionHistories">
+      <EntityTypeMapping TypeName="LeaveDemoModel.ActionHistory">
+        <MappingFragment StoreEntitySet="ActionHistory">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="RequestId" ColumnName="RequestId" />
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+          <ScalarProperty Name="StepId" ColumnName="StepId" />
+          <ScalarProperty Name="ActionId" ColumnName="ActionId" />
+          <ScalarProperty Name="ActionName" ColumnName="ActionName" />
+          <ScalarProperty Name="ActionByUserName" ColumnName="ActionByUserName" />
+          <ScalarProperty Name="ActionByDisplayName" ColumnName="ActionByDisplayName" />
+          <ScalarProperty Name="ActionDateTime" ColumnName="ActionDateTime" />
+          <ScalarProperty Name="UserActionGroup" ColumnName="UserActionGroup" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Actions">
+      <EntityTypeMapping TypeName="LeaveDemoModel.Action">
+        <MappingFragment StoreEntitySet="Actions">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ActionNameAr" ColumnName="ActionNameAr" />
+          <ScalarProperty Name="ActionNameEn" ColumnName="ActionNameEn" />
+          <ScalarProperty Name="ActionNameWorkflow" ColumnName="ActionNameWorkflow" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Emnployees">
+      <EntityTypeMapping TypeName="LeaveDemoModel.Emnployee">
+        <MappingFragment StoreEntitySet="Emnployee">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="LeaveTypeID" ColumnName="LeaveTypeID" />
+          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+          <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+          <ScalarProperty Name="LeaveBalance" ColumnName="LeaveBalance" />
+          <ScalarProperty Name="LineManagerRemark" ColumnName="LineManagerRemark" />
+          <ScalarProperty Name="HRRemark" ColumnName="HRRemark" />
+          <ScalarProperty Name="RequestId" ColumnName="RequestId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GeneralRequests">
+      <EntityTypeMapping TypeName="LeaveDemoModel.GeneralRequest">
+        <MappingFragment StoreEntitySet="GeneralRequest">
+          <ScalarProperty Name="RequestId" ColumnName="RequestId" />
+          <ScalarProperty Name="RequestNo" ColumnName="RequestNo" />
+          <ScalarProperty Name="EmpNumber" ColumnName="EmpNumber" />
+          <ScalarProperty Name="EmpFullNameAr" ColumnName="EmpFullNameAr" />
+          <ScalarProperty Name="EmpFullNameEn" ColumnName="EmpFullNameEn" />
+          <ScalarProperty Name="EmpUserName" ColumnName="EmpUserName" />
+          <ScalarProperty Name="ServiceTypeId" ColumnName="ServiceTypeId" />
+          <ScalarProperty Name="StepId" ColumnName="StepId" />
+          <ScalarProperty Name="StatusId" ColumnName="StatusId" />
+          <ScalarProperty Name="ProcessId" ColumnName="ProcessId" />
+          <ScalarProperty Name="ActionLastDateTime" ColumnName="ActionLastDateTime" />
+          <ScalarProperty Name="OnBehalf" ColumnName="OnBehalf" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedDateTime" ColumnName="CreatedDateTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LeaveTypes">
+      <EntityTypeMapping TypeName="LeaveDemoModel.LeaveType">
+        <MappingFragment StoreEntitySet="LeaveType">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RemarManagements">
+      <EntityTypeMapping TypeName="LeaveDemoModel.RemarManagement">
+        <MappingFragment StoreEntitySet="RemarManagement">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="LineManagerRemark" ColumnName="LineManagerRemark" />
+          <ScalarProperty Name="HRRemark" ColumnName="HRRemark" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

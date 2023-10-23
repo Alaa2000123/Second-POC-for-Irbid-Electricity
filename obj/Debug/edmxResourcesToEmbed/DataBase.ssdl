@@ -1,0 +1,146 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="LeaveDemoModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="ActionHistory">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RequestId" Type="int" />
+    <Property Name="Remark" Type="nvarchar" MaxLength="55" />
+    <Property Name="StepId" Type="int" />
+    <Property Name="ActionId" Type="int" />
+    <Property Name="ActionName" Type="nvarchar" MaxLength="55" />
+    <Property Name="ActionByUserName" Type="nvarchar" MaxLength="55" />
+    <Property Name="ActionByDisplayName" Type="nvarchar" MaxLength="55" />
+    <Property Name="ActionDateTime" Type="datetime" />
+    <Property Name="UserActionGroup" Type="nvarchar" MaxLength="55" />
+  </EntityType>
+  <EntityType Name="Actions">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ActionNameAr" Type="nvarchar" MaxLength="55" />
+    <Property Name="ActionNameEn" Type="nvarchar" MaxLength="55" />
+    <Property Name="ActionNameWorkflow" Type="nvarchar" MaxLength="55" />
+  </EntityType>
+  <EntityType Name="Emnployee">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="LeaveTypeID" Type="int" />
+    <Property Name="StartDate" Type="datetime" />
+    <Property Name="EndDate" Type="datetime" />
+    <Property Name="LeaveBalance" Type="int" />
+    <Property Name="LineManagerRemark" Type="nvarchar(max)" />
+    <Property Name="HRRemark" Type="nvarchar(max)" />
+    <Property Name="RequestId" Type="int" />
+  </EntityType>
+  <EntityType Name="GeneralRequest">
+    <Key>
+      <PropertyRef Name="RequestId" />
+    </Key>
+    <Property Name="RequestId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RequestNo" Type="int" />
+    <Property Name="EmpNumber" Type="nvarchar" MaxLength="55" />
+    <Property Name="EmpFullNameAr" Type="nvarchar" MaxLength="55" />
+    <Property Name="EmpFullNameEn" Type="nvarchar" MaxLength="55" />
+    <Property Name="EmpUserName" Type="nvarchar" MaxLength="5" />
+    <Property Name="ServiceTypeId" Type="int" />
+    <Property Name="StepId" Type="int" />
+    <Property Name="StatusId" Type="int" />
+    <Property Name="ProcessId" Type="int" />
+    <Property Name="ActionLastDateTime" Type="datetime" />
+    <Property Name="OnBehalf" Type="bit" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="55" />
+    <Property Name="CreatedDateTime" Type="datetime" />
+  </EntityType>
+  <EntityType Name="LeaveType">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="RemarManagement">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="LineManagerRemark" Type="nvarchar(max)" />
+    <Property Name="HRRemark" Type="nvarchar(max)" />
+  </EntityType>
+  <Association Name="FK__ActionHis__Reque__3B75D760">
+    <End Role="GeneralRequest" Type="Self.GeneralRequest" Multiplicity="0..1" />
+    <End Role="ActionHistory" Type="Self.ActionHistory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GeneralRequest">
+        <PropertyRef Name="RequestId" />
+      </Principal>
+      <Dependent Role="ActionHistory">
+        <PropertyRef Name="RequestId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ActionHis__UserA__3A81B327">
+    <End Role="Actions" Type="Self.Actions" Multiplicity="0..1" />
+    <End Role="ActionHistory" Type="Self.ActionHistory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Actions">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ActionHistory">
+        <PropertyRef Name="ActionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Emnployee__Reque__3D5E1FD2">
+    <End Role="GeneralRequest" Type="Self.GeneralRequest" Multiplicity="0..1" />
+    <End Role="Emnployee" Type="Self.Emnployee" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GeneralRequest">
+        <PropertyRef Name="RequestId" />
+      </Principal>
+      <Dependent Role="Emnployee">
+        <PropertyRef Name="RequestId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_emnployee_leavetype">
+    <End Role="LeaveType" Type="Self.LeaveType" Multiplicity="0..1" />
+    <End Role="Emnployee" Type="Self.Emnployee" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LeaveType">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Emnployee">
+        <PropertyRef Name="LeaveTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="LeaveDemoModelStoreContainer">
+    <EntitySet Name="ActionHistory" EntityType="Self.ActionHistory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Actions" EntityType="Self.Actions" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Emnployee" EntityType="Self.Emnployee" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="GeneralRequest" EntityType="Self.GeneralRequest" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LeaveType" EntityType="Self.LeaveType" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RemarManagement" EntityType="Self.RemarManagement" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__ActionHis__Reque__3B75D760" Association="Self.FK__ActionHis__Reque__3B75D760">
+      <End Role="GeneralRequest" EntitySet="GeneralRequest" />
+      <End Role="ActionHistory" EntitySet="ActionHistory" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ActionHis__UserA__3A81B327" Association="Self.FK__ActionHis__UserA__3A81B327">
+      <End Role="Actions" EntitySet="Actions" />
+      <End Role="ActionHistory" EntitySet="ActionHistory" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Emnployee__Reque__3D5E1FD2" Association="Self.FK__Emnployee__Reque__3D5E1FD2">
+      <End Role="GeneralRequest" EntitySet="GeneralRequest" />
+      <End Role="Emnployee" EntitySet="Emnployee" />
+    </AssociationSet>
+    <AssociationSet Name="fk_emnployee_leavetype" Association="Self.fk_emnployee_leavetype">
+      <End Role="LeaveType" EntitySet="LeaveType" />
+      <End Role="Emnployee" EntitySet="Emnployee" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
