@@ -34,7 +34,16 @@ namespace Second_Electricity_POC
             string EmpName = "Q.abed";
             GetEmployeeTaskListResponse result = await k2.GetEmployeeTaskListAsync(EmpName, String.Empty, String.Empty, String.Empty, String.Empty, String.Empty);
             K2TaskItem[] Items = result.Body.GetEmployeeTaskListResult;
-            K2TaskItem taskitem = Items.Where(leave => leave.ServiceName == "Leave.wf" && leave.Folio == id.ToString()).FirstOrDefault();
+            K2TaskItem taskitem;
+            if (user == "Hr")
+            {
+                 taskitem = Items.Where(e => e.ServiceName == "Leave.wf" && e.Folio == id.ToString()).FirstOrDefault(e=>e.serialNumber.EndsWith("_14"));
+            }
+            else
+            {
+                 taskitem = Items.Where(leave => leave.ServiceName == "Leave.wf" && leave.Folio == id.ToString()).FirstOrDefault(e => e.serialNumber.EndsWith("_20"));
+            }
+
             List<ComboItem> Actions = new List<ComboItem>();
             int a = 0;
             LeaveDemoEntities ef = new LeaveDemoEntities();
@@ -66,20 +75,40 @@ namespace Second_Electricity_POC
             TaskActionSoapClient k2 = new TaskActionSoapClient();
             string Id = label4.Text;
             string EmpName = "Q.abed";
+            int actionId = Convert.ToInt32(comboBox2.SelectedValue);
+
             GetEmployeeTaskListResponse result = await k2.GetEmployeeTaskListAsync(EmpName, String.Empty, String.Empty, String.Empty, String.Empty, String.Empty);
             K2TaskItem[] Items = result.Body.GetEmployeeTaskListResult;
-            K2TaskItem taskitem = Items.Where(leave => leave.ServiceName == "Leave.wf" && leave.Folio == Id.ToString()).FirstOrDefault();
-            int actionId = Convert.ToInt32(comboBox2.SelectedValue);
+            K2TaskItem taskitem;
+            if (actionId == 1)
+            {
+                 taskitem = Items.Where(leave => leave.ServiceName == "Leave.wf" && leave.Folio == Id.ToString()).FirstOrDefault(leave=>leave.serialNumber.EndsWith("_20"));
+            }
+            else
+            {
+                 taskitem = Items.Where(leave => leave.ServiceName == "Leave.wf" && leave.Folio == Id.ToString()).FirstOrDefault(leave=>leave.serialNumber.EndsWith("_14"));
+            }
             string action = ef.Actions.FirstOrDefault(a => a.Id == actionId).ActionNameEn;
             ActionWorklistItemResponse response = await k2.ActionWorklistItemAsync(taskitem.serialNumber, action, EmpName);
             var result1 = response.Body.ActionWorklistItemResult;
 
             int EmpId = Convert.ToInt32(Id);
             var emp = ef.Emnployees.FirstOrDefault(r => r.ID == EmpId);
-            
-            
+            //string workflowName = "WorkFlow\\HR Management";
+            //StartProcessResponse Response = await k2.StartProcessAsync(EmpName,EmpId, EmpId, workflowName);
+            //int ProcessID = int.Parse(Response.Body.StartProcessResult.ToString());
+
             var gen = ef.GeneralRequests.FirstOrDefault(r=>r.RequestId == emp.RequestId);
             gen.StepId += 1;
+            if (actionId == 1)
+            {
+                emp.LineManagerRemark = "Done";
+            }
+            else
+            {
+                emp.HRRemark = " Done";
+            }
+            //gen.ProcessId = ProcessID;
             ef.SaveChanges();
             
             this.Close();

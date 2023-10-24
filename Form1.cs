@@ -64,11 +64,12 @@ namespace Second_Electricity_POC
 
             sc.Close();
 
-            string workflowName = "WorkFlow\\Leave.wf";
-            StartProcessResponse Response = await K2.StartProcessAsync(EmpName, id, id, workflowName);
-            int ProcessID = int.Parse(Response.Body.StartProcessResult.ToString());
+           
             
-            int reqid = InsertGeneralRequest(id,1,1,ProcessID);
+            int reqid = InsertGeneralRequest(id,1,1);
+            string workflowName = "WorkFlow\\Leave.wf";
+            StartProcessResponse Response = await K2.StartProcessAsync(EmpName, id, reqid, workflowName);
+            int ProcessID = int.Parse(Response.Body.StartProcessResult.ToString());
             //GetEmployeeTaskListResponse result = await _K2Service.GetEmployeeTaskListAsync(EmpName, String.Empty, String.Empty, String.Empty, String.Empty, String.Empty);
             //K2TaskItem[] Items = result.Body.GetEmployeeTaskListResult;
             //K2TaskItem taskitem = Items.Where(leave => leave.ServiceName == "Leave.wf" && leave.Folio == id.ToString()).FirstOrDefault();
@@ -76,13 +77,15 @@ namespace Second_Electricity_POC
             LeaveDemoEntities ef = new LeaveDemoEntities();
             
              var leave = ef.Emnployees.FirstOrDefault(idd => idd.ID == id);
+            var req = ef.GeneralRequests.FirstOrDefault(idd => idd.RequestId == reqid);
+            req.ProcessId = ProcessID;
             leave.RequestId = reqid;
             ef.SaveChanges();
             //ActionWorklistItemResponse response = await _K2Service.ActionWorklistItemAsync(taskitem.serialNumber, action, EmpName);
             //var theresult = response.Body.ActionWorklistItemResult;
             this.Close();
         }
-        public int InsertGeneralRequest(int TableID, int ServiceTypeID, int StepID,int processId)
+        public int InsertGeneralRequest(int TableID, int ServiceTypeID, int StepID)
         {
             SqlConnection sc = new SqlConnection();
             SqlCommand com = new SqlCommand();
@@ -90,7 +93,7 @@ namespace Second_Electricity_POC
             sc.ConnectionString = @"Data Source=154.12.237.206;Initial Catalog=LeaveDemo;User ID=zuhairi;Password=_N3W_Y0r(K)";
             sc.Open(); 
             com.Connection = sc;
-            com.CommandText = @"INSERT INTO GeneralRequest (RequestNo, EmpUserName, EmpFullNameAr, EmpFullNameEn, EmpNumber, ActionLastDateTime, CreatedBy, CreatedDateTime, OnBehalf, ServiceTypeId, StatusId, StepId,ProcessId) VALUES (@RequestNo, @EmpUserName, @EmpFullNameAr,@EmpFullNameEn,@EmpNumber,@ActionLastDateTime,@CreatedBy,@CreatedDateTime,@OnBehalf,@ServiceTypeId,@StatusId,@StepId,@ProcessId);SELECT SCOPE_IDENTITY();";
+            com.CommandText = @"INSERT INTO GeneralRequest (RequestNo, EmpUserName, EmpFullNameAr, EmpFullNameEn, EmpNumber, ActionLastDateTime, CreatedBy, CreatedDateTime, OnBehalf, ServiceTypeId, StatusId, StepId) VALUES (@RequestNo, @EmpUserName, @EmpFullNameAr,@EmpFullNameEn,@EmpNumber,@ActionLastDateTime,@CreatedBy,@CreatedDateTime,@OnBehalf,@ServiceTypeId,@StatusId,@StepId);SELECT SCOPE_IDENTITY();";
 
             com.Parameters.AddWithValue("@RequestNo", TableID);
             com.Parameters.AddWithValue("@EmpUserName", "Qusai");
@@ -104,7 +107,7 @@ namespace Second_Electricity_POC
             com.Parameters.AddWithValue("@ServiceTypeId", ServiceTypeID);
             com.Parameters.AddWithValue("@StatusId", 1);
             com.Parameters.AddWithValue("@StepId", StepID);
-            com.Parameters.AddWithValue("@ProcessId", processId);
+            
 
             int Requestid = Convert.ToInt32(com.ExecuteScalar());
 

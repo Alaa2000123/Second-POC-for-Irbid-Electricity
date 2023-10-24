@@ -21,17 +21,15 @@ namespace Second_Electricity_POC
         {
             // TODO: This line of code loads data into the 'leaveDemoDataSet.Emnployee' table. You can move, or remove it, as needed.
             LeaveDemoEntities db = new LeaveDemoEntities();
-            var x = db.Emnployees.ToList();
+            var x = db.Emnployees.Where(a=>a.LineManagerRemark == null).ToList();
             List<Emnployee> emps = new List<Emnployee>();
-            foreach (var item in x)
-            {
-                var gen = db.GeneralRequests.FirstOrDefault(r => r.RequestId == item.RequestId).StepId;
-                if (gen == 2)
-                {
-                    emps.Add(item);
-                }
-            }
-            dataGridView1.DataSource = emps;
+  
+               
+                
+               
+                
+          
+            dataGridView1.DataSource = x;
 
         }
 
