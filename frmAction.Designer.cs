@@ -1,6 +1,6 @@
 ﻿namespace Second_Electricity_POC
 {
-    partial class Form3
+    partial class frmAction
     {
         /// <summary>
         /// Required designer variable.
@@ -120,7 +120,7 @@
             this.label5.TabIndex = 9;
             this.label5.Text = "اجازة مرضية";
             // 
-            // Form3
+            // frmAction
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -132,8 +132,9 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.comboBox2);
-            this.Name = "Form3";
-            this.Text = "Form3";
+            this.Name = "frmAction";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "الإجراء";
             this.ResumeLayout(false);
 
         }

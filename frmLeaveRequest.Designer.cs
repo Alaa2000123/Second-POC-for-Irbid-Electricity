@@ -1,6 +1,6 @@
 ﻿namespace Second_Electricity_POC
 {
-    partial class Form1
+    partial class frmLeaveRequest
     {
         /// <summary>
         /// Required designer variable.
@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.leaveDemoDataSet = new Second_Electricity_POC.LeaveDemoDataSet();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -39,7 +40,6 @@
             this.button2 = new System.Windows.Forms.Button();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.leaveDemoDataSet = new Second_Electricity_POC.LeaveDemoDataSet();
             this.leaveDemoDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.leaveTypeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.leaveTypeTableAdapter = new Second_Electricity_POC.LeaveDemoDataSetTableAdapters.LeaveTypeTableAdapter();
@@ -63,6 +63,11 @@
             this.comboBox1.Size = new System.Drawing.Size(179, 30);
             this.comboBox1.TabIndex = 1;
             this.comboBox1.ValueMember = "LeaveType.ID";
+            // 
+            // leaveDemoDataSet
+            // 
+            this.leaveDemoDataSet.DataSetName = "LeaveDemoDataSet";
+            this.leaveDemoDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // label1
             // 
@@ -155,11 +160,6 @@
             this.dateTimePicker2.Size = new System.Drawing.Size(179, 28);
             this.dateTimePicker2.TabIndex = 11;
             // 
-            // leaveDemoDataSet
-            // 
-            this.leaveDemoDataSet.DataSetName = "LeaveDemoDataSet";
-            this.leaveDemoDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // leaveDemoDataSetBindingSource
             // 
             this.leaveDemoDataSetBindingSource.DataSource = this.leaveDemoDataSet;
@@ -174,7 +174,7 @@
             // 
             this.leaveTypeTableAdapter.ClearBeforeFill = true;
             // 
-            // Form1
+            // frmLeaveRequest
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -191,8 +191,9 @@
             this.Controls.Add(this.comboBox1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Name = "frmLeaveRequest";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "طلب اجازة";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.leaveDemoDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.leaveDemoDataSetBindingSource)).EndInit();

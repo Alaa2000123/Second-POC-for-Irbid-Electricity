@@ -63,6 +63,16 @@ namespace Second_Electricity_POC.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap HR_Manager {
+            get {
+                object obj = ResourceManager.GetObject("HR-Manager", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Irbid_District_Electricity_Company__IDECO_ {
             get {
                 object obj = ResourceManager.GetObject("Irbid District Electricity Company (IDECO)", resourceCulture);

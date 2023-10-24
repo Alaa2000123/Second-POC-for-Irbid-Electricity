@@ -14,9 +14,9 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Second_Electricity_POC
 {
-    public partial class Form1 : Form
+    public partial class frmLeaveRequest : Form
     {
-        public Form1()
+        public frmLeaveRequest()
         {
             InitializeComponent();
             

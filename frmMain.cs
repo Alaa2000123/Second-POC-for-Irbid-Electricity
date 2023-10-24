@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Second_Electricity_POC
 {
-    public partial class Form2 : Form
+    public partial class frmMain : Form
     {
-        public Form2()
+        public frmMain()
         {
             
             InitializeComponent();
@@ -21,19 +21,19 @@ namespace Second_Electricity_POC
         private void button1_Click(object sender, EventArgs e)
         {
 
-            var x = new Form5();
+            var x = new frmActionList2();
             x.Show();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            var x = new Form1();
+            var x = new frmLeaveRequest();
             x.Show();
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            var x = new Form4();
+            var x = new frmActionList();
             x.Show();
         }
     }

@@ -18,3 +18,21 @@ D:\Second Electricity POC\Second Electricity POC\bin\Debug\EntityFramework.SqlSe
 D:\Second Electricity POC\Second Electricity POC\obj\Debug\Second_Electricity_POC.Form4.resources
 D:\Second Electricity POC\Second Electricity POC\obj\Debug\Second Electricity POC.csproj.CopyComplete
 D:\Second Electricity POC\Second Electricity POC\obj\Debug\Second_Electricity_POC.Form5.resources
+C:\Users\DELL\source\repos\Alaa2000123\Second-POC-for-Irbid-Electricity\bin\Debug\Second Electricity POC.exe.config
+C:\Users\DELL\source\repos\Alaa2000123\Second-POC-for-Irbid-Electricity\bin\Debug\Second Electricity POC.exe
+C:\Users\DELL\source\repos\Alaa2000123\Second-POC-for-Irbid-Electricity\bin\Debug\Second Electricity POC.pdb
+C:\Users\DELL\source\repos\Alaa2000123\Second-POC-for-Irbid-Electricity\bin\Debug\EntityFramework.xml
+C:\Users\DELL\source\repos\Alaa2000123\Second-POC-for-Irbid-Electricity\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\DELL\source\repos\Alaa2000123\Second-POC-for-Irbid-Electricity\obj\Debug\Second Electricity POC.csproj.AssemblyReference.cache
+C:\Users\DELL\source\repos\Alaa2000123\Second-POC-for-Irbid-Electricity\obj\Debug\Second Electricity POC.csproj.SuggestedBindingRedirects.cache
+C:\Users\DELL\source\repos\Alaa2000123\Second-POC-for-Irbid-Electricity\obj\Debug\Second_Electricity_POC.Properties.Resources.resources
+C:\Users\DELL\source\repos\Alaa2000123\Second-POC-for-Irbid-Electricity\obj\Debug\Second Electricity POC.csproj.GenerateResource.cache
+C:\Users\DELL\source\repos\Alaa2000123\Second-POC-for-Irbid-Electricity\obj\Debug\Second Electricity POC.csproj.CoreCompileInputs.cache
+C:\Users\DELL\source\repos\Alaa2000123\Second-POC-for-Irbid-Electricity\obj\Debug\Second Electricity POC.csproj.CopyComplete
+C:\Users\DELL\source\repos\Alaa2000123\Second-POC-for-Irbid-Electricity\obj\Debug\Second Electricity POC.exe
+C:\Users\DELL\source\repos\Alaa2000123\Second-POC-for-Irbid-Electricity\obj\Debug\Second Electricity POC.pdb
+C:\Users\DELL\source\repos\Alaa2000123\Second-POC-for-Irbid-Electricity\obj\Debug\Second_Electricity_POC.frmLeaveRequest.resources
+C:\Users\DELL\source\repos\Alaa2000123\Second-POC-for-Irbid-Electricity\obj\Debug\Second_Electricity_POC.frmMain.resources
+C:\Users\DELL\source\repos\Alaa2000123\Second-POC-for-Irbid-Electricity\obj\Debug\Second_Electricity_POC.frmAction.resources
+C:\Users\DELL\source\repos\Alaa2000123\Second-POC-for-Irbid-Electricity\obj\Debug\Second_Electricity_POC.frmActionList.resources
+C:\Users\DELL\source\repos\Alaa2000123\Second-POC-for-Irbid-Electricity\obj\Debug\Second_Electricity_POC.frmActionList2.resources

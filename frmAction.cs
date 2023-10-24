@@ -13,9 +13,9 @@ using System.Xml;
 
 namespace Second_Electricity_POC
 {
-    public partial class Form3 : Form
+    public partial class frmAction : Form
     {
-        public Form3(int id, string user)
+        public frmAction(int id, string user)
         {
             
             InitializeComponent();
@@ -112,7 +112,7 @@ namespace Second_Electricity_POC
             ef.SaveChanges();
             
             this.Close();
-            var xx = new Form4();
+            var xx = new frmActionList();
             xx.Show();
         }
     }
